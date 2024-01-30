@@ -9,6 +9,40 @@
     width: 100%;
 }
 
+.search-container {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#search {
+    padding: 4px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    width: 300px;
+    background-color: #f2f2f2;
+}
+
+.dropdown {
+    display: none;
+    list-style: none;
+    width: 300px;
+    padding: 4px;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-right: 8px;
+    top: 210px;
+    font-size: 12px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
 nav{
     display: flex;
     padding: 2% 6%;
