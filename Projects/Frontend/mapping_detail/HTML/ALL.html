@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    /* 保留你原有的自定义标记样式 */
+    .custom-marker {
+      background-color: red;
+      border-radius: 50%;
+      width: 1px;
+      height: 1px;
+    }
+
+    /* IFRC风格的基本样式 */
+    .ifrc-style {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    .ifrc-style h2 {
+      color: #d9534f;
+    }
+
+    .ifrc-style button {
+      background-color: #d10f0f;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .ifrc-style button:hover {
+      background-color: #db7171;
+    }
+
+    /* 新添加的样式，用于表格 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    /* 针对detail页面的样式 */
+    #disasterDetail {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 20px;
+      display: flex;
+      /* 使用 Flexbox 布局 */
+      flex-direction: column;
+      /* 垂直布局 */
+      align-items: center;
+      /* justify-content: space-between; */
+      /* 水平居中对齐 */
+    }
+
+
+    #disasterDetail h2 {
+      color: #d9534f;
+      /* order: 1; */
+      margin-bottom: 20px;
+      /* align-self: flex-start; */
+    }
+
+    #disasterDetail p {
+      margin-bottom: 10px;
+    }
+
+    #disasterDetail button {
+      background-color: #d10f0f;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    #disasterDetail button:hover {
+      background-color: #db7171;
+    }
+
+    #mapContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    /* 控制地图在 Flexbox 中的顺序，放在左下角 */
+
+
+    #map {
+      height: 300px;
+      width: 48%;
+      /* Adjust the width as needed */
+    }
+
+    #infoTable {
+      max-width: 48%;
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title>Product List</title>
+</head>
+
+<body>
+
+  <div id="disasterList" class="ifrc-style">
+    <h2>Disaster List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Country</th>
+          <th>Start Date</th>
+          <th>Finish Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <a href="../landing_page/index.html" class="view-details-btn">Go Back Landing Page</a>
+  </div>
+
+  <div id="disasterDetail" style="display: none;" class="ifrc-style">
+    <!-- 产品详情将在这里显示 -->
+    <h2 id="title">Disaster Detail</h2>
+    <div id="mapContainer" style="height: 300px; width: 48%;"></div>
+    <div id="infoTable" style="max-width: 48%;">
+      <!-- Table content will be populated dynamically with JavaScript -->
+    </div>
+    <button onclick="goBackToList()">Go back</button>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+  <script>
+    data = null;
+
+    // DOM
+    const disasterListDiv = document.getElementById('disasterList');
+    const disasterDetailDiv = document.getElementById('disasterDetail');
+    //const mapDiv = document.getElementById('map');
+    const tableBody = document.querySelector('#disasterList tbody');
+
+    // data-pass: frontend <- API-http://127.0.0.1:5000 <- backend
+    fetch('http://127.0.0.1:5000')
+      .then(response => response.json())
+      .then(receivedData => {
+        data = receivedData
+        console.log(data)
+        displayDisasterList(data);
+      })
+      .catch(error => { console.error('Error fetching data:', error); });
+
+    function displayDisasterList(data) {
+      // clear
+      tableBody.innerHTML = '';
+
+      // show ID
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.id}</td>
+          <td>${item.name}</td>
+          <td>${item.country}</td>
+          <td>${item.start_date}</td>
+          <td>${item.finish_date}</td>
+          <td><button onclick="showDisasterDetail('${item.id}');">Show Detail</button></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function showDisasterDetail(itemid) {
+      let item = data.find(disaster => disaster.id === itemid);
+      //await sendDataToBackend(itemid);
+
+      // hide the list，display the detail
+      disasterListDiv.style.display = 'none';
+      disasterDetailDiv.style.display = 'flex';
+
+      // display the detail
+      disasterDetailDiv.innerHTML = `
+        <h2 id="title">Disaster Detail</h2>
+        <div style="display: flex; width: 100%;">
+          <div id="mapContainer" style="height: 300px; width: 48%;"></div>
+          <div id="infoTable" style="width: 48%;">
+          <!-- Table content will be populated dynamically with JavaScript -->
+          </div>
+        </div>
+        <button onclick="goBackToList()">Go back</button>
+      `;
+
+      // Initialize the map when the detail div becomes visible
+      setTimeout(() => {
+        initializeMap(item.coord);
+        populateInfoTable(item);
+      }, 0);
+    }
+
+    function populateInfoTable(item) {
+      const infoTableDiv = document.getElementById('infoTable');
+      infoTableDiv.innerHTML = `
+        <table>
+          <tr>
+            <th>ID</th>
+            <td>${item.id}</td>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <td>${item.name}</td>
+          </tr>
+          <tr>
+            <th>Country</th>
+            <td>${item.country}</td>
+          </tr>
+          <tr>
+            <th>Start Date</th>
+            <td>${item.start_date}</td>
+          </tr>
+          <tr>
+            <th>Finish Date</th>
+            <td>${item.finish_date}</td>
+          </tr>
+        </table>
+      `;
+    }
+
+
+    function initializeMap(coord) {
+      var southWest = L.latLng(-90, -180);
+      var northEast = L.latLng(90, 180);
+      var bounds = L.latLngBounds(southWest, northEast);
+      var coordinates = coord.map(reverseCoordinates);
+
+      // Calculate the center of the circle based on the densest point
+      var center = calculateCentralPoint(coordinates);
+      // Create a circle using L.circle
+      var maxDistance = calculateMaxDistance(coordinates, center);
+
+      var map = L.map('mapContainer', { center: center, zoom: 3, maxBounds: bounds })
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+      // Create a heatmap using L.heatLayer
+      var gradient = { 0.05: 'orange', 0.2: 'red', 0.3: 'darkred' };
+      Object.keys(gradient).forEach(function (key) {
+        var color = gradient[key];
+        gradient[key] = adjustColor(color, 0.8, 1.2); // 亮度降低，饱和度增加
+      });
+      var heatmapLayer = L.heatLayer(coordinates, { radius: 15, blur: 5, gradient: gradient }).addTo(map);
+
+    }
+    function reverseCoordinates(pair) {
+      return [pair[1], pair[0]];
+    }
+
+    function adjustColor(color, brightness, saturation) {
+      var dummy = document.createElement('div');
+      dummy.style.color = color;
+      dummy.style.filter = 'brightness(' + brightness + ') saturate(' + saturation + ')';
+      return dummy.style.color;
+    }
+
+    function calculateCentralPoint(coordinates) {
+      var minLat = Infinity;
+      var maxLat = -Infinity;
+      var minLng = Infinity;
+      var maxLng = -Infinity;
+
+      coordinates.forEach(function (coord) {
+        minLat = Math.min(minLat, coord[0]);
+        maxLat = Math.max(maxLat, coord[0]);
+        minLng = Math.min(minLng, coord[1]);
+        maxLng = Math.max(maxLng, coord[1]);
+      });
+
+      var centerLat = (minLat + maxLat) / 2;
+      var centerLng = (minLng + maxLng) / 2;
+
+      return [centerLat, centerLng];
+    }
+
+    function calculateMaxDistance(coordinates, center) {
+      return coordinates.reduce(function (maxDist, coord) {
+        var distance = Math.sqrt(Math.pow(coord[0] - center[0], 2) + Math.pow(coord[1] - center[1], 2));
+        return Math.max(maxDist, distance);
+      }, 0);
+    }
+
+    function goBackToList() {
+      // back to the list page
+      disasterListDiv.style.display = 'block';
+      disasterDetailDiv.style.display = 'none';
+    }
+
+
+  </script>
+
+</body>
+
+</html>

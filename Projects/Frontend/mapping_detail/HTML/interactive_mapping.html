@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="/Frontend/mapping_detail/CSS/styles.css" />
+  <title>Disaster List</title>
+</head>
+
+<body>
+  <div id="disasterList" class="ifrc-style">
+    <h2>Disaster List</h2>
+    <div id="search_Container"></div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Country</th>
+          <th>Start Date</th>
+          <th>Finish Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div id="paginationContainer">
+      <ul id="pagination" class="pagination"></ul>
+    </div>
+    <a href="/Frontend/landing_page/index.html" class="view-details-btn">Go Back Landing Page</a>
+  </div>
+
+  <div id="disasterDetail" style="display: none;" class="ifrc-style">
+    <h2 id="title">Disaster Detail</h2>
+    <div id="mapContainer" style="height: 300px; width: 48%;"></div>
+    <div id="infoTable" style="max-width: 48%;">
+    </div>
+    <button onclick="goBackToList()">Go back</button>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+  <script src="/Frontend/mapping_detail/JS/regression.js"></script>
+  <script src="/Frontend/mapping_detail/JS/utils.js"></script>
+  <script src="/Frontend/mapping_detail/JS/api.js"></script>
+  <script src="/Frontend/mapping_detail/JS/search.js"></script>
+  <script src="/Frontend/mapping_detail/JS/map.js"></script>
+  <script src="/Frontend/mapping_detail/JS/main.js"></script>
+
+</body>
+
+</html>
