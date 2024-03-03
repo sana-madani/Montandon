@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    position: relative;
+    height: 150px;
+    width: 100%;
+}
+
+.header::after {
+    content: ''; /* Create a pseudo-element */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Set width to 100% of the header */
+    height: 2px; /* Height of the red line */
+    background-color: red; /* Color of the red line */
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 200px;
+    height: 100px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}   
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color;
+}
+
+.nav-links ul li:hover a {
+    color: #f00;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f00;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width:100%;
+}
+
+/* Dashboard styles */
+.dashboard {
+    display: grid;
+    grid-gap: 20px;
+    padding: 20px;
+    height: auto; /* Adjust the height to auto to accommodate multiple rows */
+}
+
+.chart {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for visual effect */
+    width: calc(80%); /* Set width to almost the full width of the website */
+    height: 300px; /* Set the desired height of the chart */
+    margin: 0 auto; /* Center the chart horizontally */
+}
+
+
+.table-container {
+    border: 2px solid black; /* Add border around the table */
+    border-radius: 5px; /* Add rounded corners */
+    overflow: auto; /* Add scroll bar if needed */
+    padding: 10px; /* Add padding */
+    width: calc(100%); /* Set width to almost the full width of the website */
+    max-width: 800px; /* Set a maximum width for the table */
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+#topCountriesTable {
+    width: 100%; /* Set table width to 100% of its container */
+    border-collapse: collapse; /* Collapse table borders */
+}
+
+#topCountriesTable th,
+#topCountriesTable td {
+    padding: 8px; /* Add padding to table cells */
+    border-bottom: 1px solid black; /* Add bottom border to table rows */
+    text-align: center; /* Align text to the center */
+}
+
+#topCountriesTable tr:last-child td {
+    border-bottom: none; /* Remove bottom border from the last row */
+}
