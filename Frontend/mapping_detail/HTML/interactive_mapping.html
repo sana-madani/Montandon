@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <section class="header">
+    <link rel="stylesheet" href="/Projects/Frontend/landing_page/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  </section>>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="/Projects/Frontend/mapping_detail/CSS/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.1.1/chroma.min.js"></script>
+  <script src="https://unpkg.com/@turf/turf"></script>
+  <title>Disaster List</title>
+</head>
+
+<body>
+  <section class="header">
+    <nav>
+      <a href="index.html"><img src="logo.png"></a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Overview</a></li>
+          <li><a href="">Teams & Partners</a></li>
+          <li><a href="">API</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="search-container">
+      <input type="text" id="search" name="search" placeholder="Search">
+      <ul id="suggestions" class="dropdown"></ul>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+  <script src="/Projects/Frontend/mapping_detail/JS/regression.js"></script>
+  <script src="/Projects/Frontend/mapping_detail/JS/utils.js"></script>
+  <script src="/Projects/Frontend/mapping_detail/JS/api.js"></script>
+  <script src="/Projects/Frontend/mapping_detail/JS/search.js"></script>
+  <script src="/Projects/Frontend/mapping_detail/JS/map.js"></script>
+  <script src="/Projects/Frontend/mapping_detail/JS/main.js"></script>
+
+</body>
+
+</html>
