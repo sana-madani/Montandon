@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Dashboard</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Overview</a></li>
+                    <li><a href="">Teams & Partners</a></li>
+                    <li><a href="">API</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <section class="map">
+        Hi
+    </section>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <div class="chart chart1">
+            <canvas id="bar_chart"></canvas>
+        </div>
+        <div class="chart chart2">
+            <canvas id="line_chart" height="200"></canvas>
+        </div>
+        <div class="chart chart3">
+            <h3>Top Ten Countries Affected by Most Hazards</h3>
+            <div class="table-container">
+                <table id="topCountriesTable">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Number of Hazards</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table data will be populated dynamically via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
