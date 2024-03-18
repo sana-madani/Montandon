@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Montandon Platform</title>
+    <link rel="stylesheet" href="mapping.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="/Projects/Frontend/landing_page/index.html"><img
+                    src="/Projects/Frontend/mapping_detail/HTML/logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/Projects/Frontend/landing_page/index.html">Home</a></li>
+                    <li><a href="/Projects/Frontend/mapping_detail/HTML/interactive_mapping.html">Events</a></li>
+                    <li><a href="/Projects/Frontend/summary_mapping/mapping.html">Summary Mapping</a></li>
+                    <li><a href="/Projects/Frontend/partners/partners.html">Teams & Partners</a></li>
+                    <li><a href="/Projects/Frontend/facts/facts.html">Facts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <hr style="background-color: red; height: 2px; border: none;">
+
+
+    <section class="map">
+        <h2>Global Statistics</h2>
+        <div id="map"></div>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    </section>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <div class="chart chart1">
+            <h3 class="table-title">Number of events per hazard</h3>
+            <canvas id="bar_chart"></canvas>
+            <form id="chart1Form">
+                <label for="chart1StartDate">Start Date:</label>
+                <input type="date" id="chart1StartDate" name="startDate" min="1922-01-01" onchange="updateEndDateMin()">
+                <label for="chart1EndDate">End Date:</label>
+                <input type="date" id="chart1EndDate" name="endDate">
+                <button type="submit" onclick="return validateDate()">Search</button>
+            </form>
+            <script src="dateValidation.js"></script>
+        </div>
+        <div class="chart chart2">
+            <h3 class="table-title">Number of hazards occured per month</h3>
+            <h4 class="table-title">(Data displayed by default is from the preset range: 1922 to 2024)</h4>
+            <canvas id="line_chart" height="200"></canvas>
+            <form id="chart2Form">
+                <label for="chart2Year">Enter Year:</label>
+                <input type="number" id="chart2Year" name="year" min="1922" max="2024">
+                <button id="submitYear">Submit</button>
+            </form>
+        </div>
+        <div class="chart chart3">
+            <h3 class="table-title">Top Ten Countries Affected by Most Hazards</h3>
+            <div class="table-container">
+                <table id="topCountriesTable">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Total Number of Hazards</th>
+                            <th>Most Frequently Happened Hazard</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table data will be populated dynamically via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+
+</html>

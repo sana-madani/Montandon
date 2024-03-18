@@ -3,10 +3,17 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Montandon Platform</title>
+    <title>Montandon</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        .nav-links ul li a[href="/Projects/Frontend/landing_page/index.html"] {
+            color: #f00;
+            /* Changes the text color to red */
+        }
+    </style>
+
 </head>
 
 <body>
@@ -15,60 +22,103 @@
             <a href="index.html"><img src="logo.png"></a>
             <div class="nav-links">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Overview</a></li>
-                    <li><a href="">Teams & Partners</a></li>
-                    <li><a href="">API</a></li>
+                    <li><a href="/Projects/Frontend/landing_page/index.html">Home</a></li>
+                    <li><a href="/Projects/Frontend/mapping_detail/HTML/interactive_mapping.html">Events</a></li>
+                    <li><a href="/Projects/Frontend/summary_mapping/mapping.html">Summary Mapping</a></li>
+                    <li><a href="/Projects/Frontend/partners/partners.html">Teams & Partners</a></li>
+                    <li><a href="/Projects/Frontend/facts/facts.html">Facts</a></li>
                 </ul>
             </div>
         </nav>
 
+        <!--
         <div class="search-container">
             <input type="text" id="search" name="search" placeholder="Search">
             <ul id="suggestions" class="dropdown"></ul>
         </div>
 
-        <script src="script.js"></script>
+        <script src="script.js"></script>-->
 
         <div class="text-box">
             <h1><br>Montandon Platform</h1>
             <p><br>Montandon aims to make all disaster information universally accessible and useful to IFRC responders
-                for better decision making based on impact information.</p>
+                for better decision making based on impact information.<br>The objective of Montandon – the Global
+                Crisis Data Bank is to inform future action based on analysis of past natural hazard events, their
+                impacts and responses to these crises. </p>
             <a href="https://go.ifrc.org/" class="go-btn">Visit IFRC GO to learn more</a>
             <p><br></p>
+        </div>
     </section>
 
     <section class="recent-disasters">
-        <h2>Recent Disasters</h2>
-        <a href="/Frontend/mapping_detail/HTML/interactive_mapping.html" class="view-details-btn">View All Disasters</a>
-
-
-        <div class="row">
-            <div class="recent-disasters-col">
-                <h3> event 1</h3>
-                <p> info on event 1</p>
-            </div>
-            <div class="recent-disasters-col">
-                <h3> event 2</h3>
-                <p> info on event 1</p>
-            </div>
-            <div class="recent-disasters-col">
-                <h3> event 3</h3>
-                <p> info on event 1</p>
-            </div>
-            <div class="recent-disasters-col">
-                <h3> event 4</h3>
-                <p> info on event 1</p>
-            </div>
-            <div class="recent-disasters-col">
-                <h3> event 5</h3>
-                <p> info on event 1</p>
-            </div>
-            <div class="recent-disasters-col">
-                <h3> event 6</h3>
-                <p> info on event 1</p>
-            </div>
+        <div class="header-container">
+            <h2>Recent Disasters</h2>
+            <a href="/Projects/Frontend/mapping_detail/HTML/interactive_mapping.html">All Disasters</a>
         </div>
+        <div class="row" id="disasterList">
+        </div>
+    </section>
+
+    <script src="/Projects/Frontend/mapping_detail/JS/api.js"></script>
+    <script>
+
+        // Fetches data from the Flask API and displays the first six disasters
+        fetch('http://127.0.0.1:5000')
+            .then(response => response.json())
+            .then(receivedData => {
+                const recentDisasters = receivedData.slice(1, 7); // Get the first six disasters after metadata
+                displayDisasterList(recentDisasters);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+        function displayDisasterList(disasters) {
+            const disasterListDiv = document.getElementById('disasterList');
+            disasterListDiv.innerHTML = ''; // Clear previous content
+
+            disasters.forEach(disaster => {
+                const disasterDiv = document.createElement('div');
+                disasterDiv.className = 'recent-disasters-col';
+
+                // Remove quotations from the name
+                const nameWithoutQuotes = disaster.name.replace(/["']/g, '');
+                disasterDiv.innerHTML = `
+                    <h3>${nameWithoutQuotes}</h3>
+                    <p>${disaster.start_date}</p>
+                `;
+                disasterListDiv.appendChild(disasterDiv);
+            });
+        }
+    </script>
+    <section class="END">
+        <table>
+            <tr>
+                <th>About Montandon</th>
+                <th>Find Out More</th>
+                <th>IFRC Helpful links</th>
+                <th>Contact Us</th>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    Montandon is a Red Cross Red Crescent<br>
+                    platform to make impact information on<br>
+                    emergencies accessible to all.<br><br>
+                </td>
+                <td>
+                    <a href="https://www.ifrc.org">ifrc.org</a><br>
+                    <a href="https://rcrcsims.org">rcrcsims.org</a><br>
+                    <a href="https://rcrcsims.org">rcrcsims.org</a><br>
+                </td>
+                <td>
+                    <a href="https://github.com/sana-madani/Montandon">Open Source Code</a><br>
+                    <a href="http://montandon.westeurope.cloudapp.azure.com:8000/__docs__/#overview">API
+                        Documentation</a><br>
+                    <a href="https://go.ifrc.org/resources">Other Resources</a><br>
+                </td>
+                <td><a href="im@ifrc.org">im@ifrc.org</a></td>
+            </tr>
+
+        </table>
     </section>
 </body>
 

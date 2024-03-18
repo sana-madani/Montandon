@@ -13,6 +13,7 @@ function getAllInputValues() {
 }
 
 function create_all_Containers() {
+  const form = document.createElement('form');
   const parentContainer = document.createElement('div');
   parentContainer.style.display = 'flex';
 
@@ -38,11 +39,9 @@ function create_all_Containers() {
   parentContainer.appendChild(spacer3);
   parentContainer.appendChild(type_Container);
 
-  // search_Container.appendChild(country_Container);
-  // search_Container.appendChild(type_Container);
+  form.appendChild(parentContainer);
   const search_Container = document.getElementById('search_Container');
-  search_Container.appendChild(parentContainer);
-  //search_Container.style.marginRight = '10px';
+  search_Container.appendChild(form);
 
 }
 
@@ -52,21 +51,27 @@ function create_key_Container(label, options) {
   const searchContainer = document.createElement('single_search_Container');
   const inputID = label + "Input";
 
-  var prefixString = document.createElement('span');
-  prefixString.textContent = label;
+  if (label === "All Disaster Types") {
+    var prefixString = document.createElement('span');
+    prefixString.textContent = "Disaster Type";
+  } else {
+    var prefixString = document.createElement('span');
+    prefixString.textContent = "Country";
+  }
 
-  // 创建输入框
+
+  // create input table
   var searchInput = document.createElement('input');
   searchInput.type = 'text';
   searchInput.id = inputID;
   searchInput.setAttribute('list', label + 'types');
   searchInput.placeholder = label;
 
-  // 创建数据列表
+  // create data list
   var dataList = document.createElement('datalist');
   dataList.id = label + 'types';
 
-  // 添加选项到数据列表
+  //option
   console.log({ "option": options });
   var disasterOptions = options;
   disasterOptions.forEach(function (disaster) {
@@ -75,7 +80,6 @@ function create_key_Container(label, options) {
     dataList.appendChild(option);
   });
 
-  //  将元素添加到页面中
   searchInput.appendChild(dataList);
   searchContainer.appendChild(prefixString);
   searchContainer.appendChild(searchInput);
@@ -101,7 +105,6 @@ function create_date_Container(label) {
   dateInput.type = "date";
   dateInput.name = "datepicker";
 
-  // 将日期输入框添加到容器中
   dateContainer.appendChild(prefixString);
   dateContainer.appendChild(dateInput);
 
@@ -116,19 +119,17 @@ function create_date_Container(label) {
 function search() {
   const data1 = getAllInputValues();
   fetch('http://127.0.0.1:5000', {
-    method: 'POST', // 或者 'GET'，取决于你的需求
+    method: 'POST',
     headers: {
-      'Content-Type': 'application/json' // 声明请求体的内容类型为 JSON
-      // 可以添加其他的headers
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data1) // 将数据对象转换为JSON字符串
+    body: JSON.stringify(data1)
   })
     .then(response => response.json())
     .then(result => {
       console.log(result);
       data = result;
       displayDisasterList(data);
-      //console.log('Backend response:', result);
     })
     .catch(error => {
       console.error('Error sending data to backend:', error);

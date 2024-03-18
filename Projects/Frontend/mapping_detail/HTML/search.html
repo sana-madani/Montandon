@@ -4,46 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polynomial Regression Example</title>
-  <!-- Leaflet CSS -->
+  <title>Leaflet Map</title>
+  <!-- 引入 Leaflet 库 -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <!-- Leaflet JavaScript -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <!-- Regression JS -->
-  <!-- Regression JS (jsDelivr CDN) -->
-  <script src="/Frontend/mapping_detail/JS/regression.js"></script>
+  <style>
+    #map {
+      height: 400px;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="map"></div>
 
-  <div id="map" style="height: 400px;"></div>
-
-  <script>
-    var map = L.map('map').setView([0, 0], 2);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-    // 示例气旋波及区域坐标
-    var cycloneCoordinates = [
-      [0, 0],
-      [10, 10],
-      [20, 5],
-      [30, 15],
-      [40, 10]
-    ];
-
-    // 提取经度或纬度的数据
-    var xData = cycloneCoordinates.map(coord => coord[0]);
-    var yData = cycloneCoordinates.map(coord => coord[1]);
-
-    // 进行二次方程回归
-    var result = regression.polynomial([[1, 2], [2, 3], [3, 4]], { order: 2, precision: 10 });
-    var regressionCurve = result.points.map(point => [point[0], point[1]]);
-
-    // 绘制回归曲线
-    var polyline = L.polyline(regressionCurve, { color: 'red' }).addTo(map);
-    map.fitBounds(polyline.getBounds());
-  </script>
-
+  <script src="map.js"></script>
 </body>
 
 </html>
