@@ -1,10 +1,13 @@
 # test_main.py
 import pytest
 import sys
-# sys.path.append('../Backend')
+
+sys.path.append('/Users/hcj/UCL/Year2/COMP0016/Montandon/Projects/Backend')
+# print("----------",sys.path)
 # sys.path.append('../Projects/Backend')
-from Projects.Backend.event_processing import initial_event_Level, initial_hazard_Level, initial_events, send_all, send_selected
-from Projects.Backend.data_processing import check_country, check_disaster_types, check_date_before, check_date_after, sort_events_by_date
+from event_processing import initial_event_Level, initial_hazard_Level, initial_events, send_all, send_selected
+from data_processing import check_country, check_disaster_types, check_date_before, check_date_after, sort_events_by_date
+# sys.path.insert(0, '/../Backend')
 
 def test_initial_event_Level():
     # Test initial_event_Level function

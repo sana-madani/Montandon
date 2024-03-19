@@ -4,6 +4,7 @@
 # Method: Run tests on different browsers (Chrome, Firefox, Edge, Safari) to check for any compatibility issues.
 
 import pytest
+print(pytest.__file__)
 from selenium import webdriver
 
 # define the browser example

@@ -2,6 +2,9 @@ import sys
 from model import event
 from data_processing import produce_countries_data, sort_events_by_date, check_date_after, check_date_before, check_country, check_disaster_types
 
+
+
+
 disaster_types = {"EQ": "Earthquake",
                   "FL": "Flood",
                   "VO": "Volcano",

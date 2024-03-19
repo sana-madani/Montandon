@@ -2,7 +2,9 @@ import pytest
 import requests
 import os
 import json
-from Projects.Backend.event_processing import initial_events, send_all
+import sys
+sys.path.append('/Users/hcj/UCL/Year2/COMP0016/Montandon/Projects/Backend')
+from event_processing import initial_events, send_all
 
 @pytest.fixture
 def api_url():
