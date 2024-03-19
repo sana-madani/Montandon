@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from Projects.Backend.event_processing import initial_events, send_all, send_selected
+from event_processing import initial_events, send_all, send_selected
 import os
 import json
 
@@ -19,8 +19,8 @@ def get_data():
 if __name__ == '__main__':
     global events, df1, df2
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    json_file_path = os.path.join(script_dir, 'Example_Data', 'event_Level.json')
-    geojson_file_path = os.path.join(script_dir, 'Example_Data', 'hazard_Level.geojson')
+    json_file_path = os.path.join(script_dir, '..','db', 'event_Level.json')
+    geojson_file_path = os.path.join(script_dir, '..','db', 'hazard_Level.geojson')
     with open(json_file_path, 'r') as file1:
         data1 = json.load(file1)
     with open(geojson_file_path, 'r') as file2:

@@ -1,7 +1,8 @@
 # test_main.py
-
 import pytest
 import sys
+# sys.path.append('../Backend')
+# sys.path.append('../Projects/Backend')
 from Projects.Backend.event_processing import initial_event_Level, initial_hazard_Level, initial_events, send_all, send_selected
 from Projects.Backend.data_processing import check_country, check_disaster_types, check_date_before, check_date_after, sort_events_by_date
 

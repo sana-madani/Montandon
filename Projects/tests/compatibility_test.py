@@ -9,7 +9,6 @@ from selenium import webdriver
 # define the browser example
 @pytest.mark.parametrize("browser", ["chrome", "firefox"])#, "edge", "safari"])
 def test_compatibility(browser):
-    # 根据不同的浏览器创建对应的 WebDriver 实例
     if browser == "chrome":
         driver = webdriver.Chrome()
     elif browser == "firefox":

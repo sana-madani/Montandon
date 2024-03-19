@@ -68,7 +68,7 @@ def check_date_before(events, date1):
 
 def produce_countries_data():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    country_file = os.path.join(script_dir, 'Example_Data', 'countries_centroids.json')
+    country_file = os.path.join(script_dir,'..','db', 'countries_centroids.json')
     with open(country_file, 'r') as file:
         data = json.load(file)
     return data
