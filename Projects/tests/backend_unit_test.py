@@ -1,10 +1,12 @@
 # test_main.py
 import pytest
 import sys
+import os
 
-sys.path.append('/Users/hcj/UCL/Year2/COMP0016/Montandon/Projects/Backend')
-# print("----------",sys.path)
-# sys.path.append('../Projects/Backend')
+script_dir = os.path.dirname(os.path.realpath(__file__))
+backend_dir = os.path.join(script_dir, '../Backend')
+sys.path.append(backend_dir)
+
 from event_processing import initial_event_Level, initial_hazard_Level, initial_events, send_all, send_selected
 from data_processing import check_country, check_disaster_types, check_date_before, check_date_after, sort_events_by_date
 # sys.path.insert(0, '/../Backend')
@@ -98,19 +100,28 @@ mock_events = [{
     'ev_name': 'Event 1',
     'Country': 'USA',
     'ev_sdate': '2022-01-01',
-    'ev_fdate': '2022-01-10'
+    'ev_fdate': '2022-01-10',
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
 },{
     'event_ID': "0002",
     'ev_name': 'Event 2',
     'Country': 'UK',
     'ev_sdate': '2022-02-01',
-    'ev_fdate': '2022-02-10'
+    'ev_fdate': '2022-02-10',
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "1000"
 },{
     'event_ID': "0003",
     'ev_name': 'Event 3',
     'Country': 'China',
     'ev_sdate': '2022-03-01',
-    'ev_fdate': '2022-03-20'
+    'ev_fdate': '2022-03-20',
+    "imp_type": "Injured",
+    "exp_specs": "People",
+    "imptypinju": "3000"
 }]
 
 mock_hazards = {'features': [{'properties': {

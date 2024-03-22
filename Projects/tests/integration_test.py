@@ -3,7 +3,10 @@ import requests
 import os
 import json
 import sys
-sys.path.append('/Users/hcj/UCL/Year2/COMP0016/Montandon/Projects/Backend')
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
+backend_dir = os.path.join(script_dir, '../Backend')
+sys.path.append(backend_dir)
 from event_processing import initial_events, send_all
 
 @pytest.fixture

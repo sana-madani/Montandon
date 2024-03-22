@@ -21,7 +21,10 @@
     "haz_cluster_code": "hazhmwind",
     "haz_cluster_lab": "Wind-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "1000"
   },
   {
     "event_ID": "DR-2018-08-20-AFG-GCDB_V1",
@@ -45,7 +48,10 @@
     "haz_cluster_code": "hazhmprecip",
     "haz_cluster_lab": "Precipitation-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "VO-2018-12-21-IDN-GCDB_V1",
@@ -69,7 +75,10 @@
     "haz_cluster_code": "hazgeovolc",
     "haz_cluster_lab": "Volcanogenic (volcanoes and geothermal)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "FL-2019-08-27-VGB-GCDB_V1",
@@ -93,7 +102,10 @@
     "haz_cluster_code": "hazhmflood",
     "haz_cluster_lab": "Flood",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Injured",
+    "exp_specs": "People",
+    "imptypinju": "3000"
   },
   {
     "event_ID": "EQ-2021-08-13-HTI-GCDB_V1",
@@ -117,7 +129,10 @@
     "haz_cluster_code": "hazgeoseis",
     "haz_cluster_lab": "Seismogenic (Earthquakes)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "2000"
   },
   {
     "event_ID": "TC-2016-12-06-IND-GCDB_V2",
@@ -141,7 +156,10 @@
     "haz_cluster_code": "hazhmwind",
     "haz_cluster_lab": "Wind-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "1000"
   },
   {
     "event_ID": "DR-2018-08-20-AFG-GCDB_V2",
@@ -165,7 +183,10 @@
     "haz_cluster_code": "hazhmprecip",
     "haz_cluster_lab": "Precipitation-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "VO-2018-12-21-IDN-GCDB_V2",
@@ -189,7 +210,10 @@
     "haz_cluster_code": "hazgeovolc",
     "haz_cluster_lab": "Volcanogenic (volcanoes and geothermal)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "FL-2019-08-27-VGB-GCDB_V2",
@@ -213,7 +237,10 @@
     "haz_cluster_code": "hazhmflood",
     "haz_cluster_lab": "Flood",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Injured",
+    "exp_specs": "People",
+    "imptypinju": "3000"
   },
   {
     "event_ID": "EQ-2021-08-13-HTI-GCDB_V2",
@@ -237,7 +264,10 @@
     "haz_cluster_code": "hazgeoseis",
     "haz_cluster_lab": "Seismogenic (Earthquakes)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "2000"
   },
   {
     "event_ID": "TC-2016-12-06-IND-GCDB_V3",
@@ -261,7 +291,10 @@
     "haz_cluster_code": "hazhmwind",
     "haz_cluster_lab": "Wind-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "1000"
   },
   {
     "event_ID": "DR-2018-08-20-AFG-GCDB_V3",
@@ -285,7 +318,10 @@
     "haz_cluster_code": "hazhmprecip",
     "haz_cluster_lab": "Precipitation-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "VO-2018-12-21-IDN-GCDB_V3",
@@ -309,7 +345,10 @@
     "haz_cluster_code": "hazgeovolc",
     "haz_cluster_lab": "Volcanogenic (volcanoes and geothermal)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "FL-2019-08-27-VGB-GCDB_V3",
@@ -333,7 +372,10 @@
     "haz_cluster_code": "hazhmflood",
     "haz_cluster_lab": "Flood",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Injured",
+    "exp_specs": "People",
+    "imptypinju": "3000"
   },
   {
     "event_ID": "EQ-2021-08-13-HTI-GCDB_V3",
@@ -357,7 +399,10 @@
     "haz_cluster_code": "hazgeoseis",
     "haz_cluster_lab": "Seismogenic (Earthquakes)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "2000"
   },
   {
     "event_ID": "TC-2016-12-06-IND-GCDB_V4",
@@ -381,7 +426,10 @@
     "haz_cluster_code": "hazhmwind",
     "haz_cluster_lab": "Wind-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "1000"
   },
   {
     "event_ID": "DR-2018-08-20-AFG-GCDB_V4",
@@ -405,7 +453,10 @@
     "haz_cluster_code": "hazhmprecip",
     "haz_cluster_lab": "Precipitation-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "VO-2018-12-21-IDN-GCDB_V4",
@@ -429,7 +480,10 @@
     "haz_cluster_code": "hazgeovolc",
     "haz_cluster_lab": "Volcanogenic (volcanoes and geothermal)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "FL-2019-08-27-VGB-GCDB_V4",
@@ -453,7 +507,10 @@
     "haz_cluster_code": "hazhmflood",
     "haz_cluster_lab": "Flood",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Injured",
+    "exp_specs": "People",
+    "imptypinju": "3000"
   },
   {
     "event_ID": "EQ-2021-08-13-HTI-GCDB_V4",
@@ -477,7 +534,10 @@
     "haz_cluster_code": "hazgeoseis",
     "haz_cluster_lab": "Seismogenic (Earthquakes)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "2000"
   },
   {
     "event_ID": "TC-2016-12-06-IND-GCDB_V5",
@@ -501,7 +561,10 @@
     "haz_cluster_code": "hazhmwind",
     "haz_cluster_lab": "Wind-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "1000"
   },
   {
     "event_ID": "DR-2018-08-20-AFG-GCDB_V5",
@@ -525,7 +588,10 @@
     "haz_cluster_code": "hazhmprecip",
     "haz_cluster_lab": "Precipitation-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "VO-2018-12-21-IDN-GCDB_V5",
@@ -549,7 +615,10 @@
     "haz_cluster_code": "hazgeovolc",
     "haz_cluster_lab": "Volcanogenic (volcanoes and geothermal)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "FL-2019-08-27-VGB-GCDB_V5",
@@ -573,7 +642,10 @@
     "haz_cluster_code": "hazhmflood",
     "haz_cluster_lab": "Flood",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Injured",
+    "exp_specs": "People",
+    "imptypinju": "3000"
   },
   {
     "event_ID": "EQ-2021-08-13-HTI-GCDB_V5",
@@ -597,7 +669,10 @@
     "haz_cluster_code": "hazgeoseis",
     "haz_cluster_lab": "Seismogenic (Earthquakes)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "2000"
   },
   {
     "event_ID": "TC-2016-12-06-IND-GCDB_V6",
@@ -621,7 +696,10 @@
     "haz_cluster_code": "hazhmwind",
     "haz_cluster_lab": "Wind-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "1000"
   },
   {
     "event_ID": "DR-2018-08-20-AFG-GCDB_V6",
@@ -645,7 +723,10 @@
     "haz_cluster_code": "hazhmprecip",
     "haz_cluster_lab": "Precipitation-Related",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "VO-2018-12-21-IDN-GCDB_V6",
@@ -669,7 +750,10 @@
     "haz_cluster_code": "hazgeovolc",
     "haz_cluster_lab": "Volcanogenic (volcanoes and geothermal)",
     "haz_type_code": "haztypegeohaz",
-    "haz_type_lab": "Geohazards"
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Deaths",
+    "exp_specs": "People",
+    "imptypdeat": "100"
   },
   {
     "event_ID": "FL-2019-08-27-VGB-GCDB_V6",
@@ -693,6 +777,36 @@
     "haz_cluster_code": "hazhmflood",
     "haz_cluster_lab": "Flood",
     "haz_type_code": "haztypehydromet",
-    "haz_type_lab": "Meterological & Hydrological"
+    "haz_type_lab": "Meterological & Hydrological",
+    "imp_type": "Injured",
+    "exp_specs": "People",
+    "imptypinju": "3000"
+  },
+  {
+    "event_ID": "EQ-2021-08-13-HTI-GCDB_V6",
+    "ev_name": "\"Earthquake in Haiti\"",
+    "ext_ID": "1281677  :  EQ-2021-000116-HTI",
+    "ext_ID_db": "GDACS  :  GLIDE",
+    "ext_ID_org": "EC-JRC  :  ADRC",
+    "ev_sdate": "2021-08-13",
+    "ev_fdate": "2021-08-13",
+    "gen_location": "\"Earthquake in Haiti\"",
+    "ev_ISO3s": "HTI",
+    "Country": "Haiti",
+    "UNRegion": "Latin America and the Caribbean",
+    "WorldBankRegions": "Latin America & Caribbean",
+    "Continent": "North America",
+    "UNSubRegion": "Caribbean",
+    "WorldBankIncomeGroups": "Low Income",
+    "haz_Ab": "EQ",
+    "haz_spec_code": "GH0001  :  GH0002",
+    "haz_spec_lab": "Earthquake  :  Ground Shaking (Earthquake)",
+    "haz_cluster_code": "hazgeoseis",
+    "haz_cluster_lab": "Seismogenic (Earthquakes)",
+    "haz_type_code": "haztypegeohaz",
+    "haz_type_lab": "Geohazards",
+    "imp_type": "Missing",
+    "exp_specs": "People",
+    "imptypmiss": "2000"
   }
 ]

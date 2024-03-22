@@ -262,6 +262,10 @@ function populateInfoTable(item) {
         <th>Country</th>
         <td>${item.country}</td>
       </tr>
+      <tr>
+        <th>World Bank Income</th>
+        <td>${item.WorldBankIncome}</td>
+      </tr>
       </table>
       <table>
       <tr>
@@ -279,6 +283,10 @@ function populateInfoTable(item) {
       <tr>
         <th>Max Value</th>
         <td>${item.max_value}</td>
+      </tr>
+      <tr>
+        <th>${item.impact}</th>
+        <td>${item.impact_value}</td>
       </tr>
     </table>
   `;

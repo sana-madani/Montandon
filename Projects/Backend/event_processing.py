@@ -1,6 +1,6 @@
 import sys
 from model import event
-from data_processing import produce_countries_data, sort_events_by_date, check_date_after, check_date_before, check_country, check_disaster_types
+from data_processing import produce_countries_data, sort_events_by_date, check_date_after, check_date_before, check_country, check_disaster_types, check_impact
 
 
 
@@ -21,6 +21,10 @@ def initial_event_Level(data):
         value["name"] = event['ev_name']
         value["country"] = event['Country']
         value["start_date"] = event['ev_sdate']
+        imp_type = event['imp_type']
+        exp_specs = event['exp_specs']
+        value['impact'] = exp_specs + " " + imp_type
+        value['impact_value'] = check_impact(imp_type, event)
         value["finish_date"] = event['ev_fdate']
         hazards[event['event_ID']] = value
         countries.append(event['Country'])
@@ -68,6 +72,8 @@ def initial_events(df1,df2):
         eve.country = value["country"]
         eve.start_date = value["start_date"]
         eve.finish_date = value["finish_date"]
+        eve.impact = value["impact"]
+        eve.impact_value = value["impact_value"]
         eve.max_value = str(hazard_level_dic[key]["max_value"])
         eve.type = disaster_types[hazard_level_dic[key]["type"]]
         eve.continent = hazard_level_dic[key]["continent"]
@@ -96,6 +102,8 @@ def send_all(events):
             'continent': event.continent,
             'start_date': event.start_date,
             'finish_date': event.finish_date,
+            'impact': event.impact,
+            'impact_value': event.impact_value,
             'WorldBankIncome': event.WorldBankIncome,
             'file_location': event.file_location,
             'source_URL': event.source_URL,
@@ -125,6 +133,8 @@ def send_selected(events, data_from_fronted):
             'continent': selected_event.continent,
             'start_date': selected_event.start_date,
             'finish_date': selected_event.finish_date,
+            'impact': selected_event.impact,
+            'impact_value': selected_event.impact_value,
             'WorldBankIncome': selected_event.WorldBankIncome,
             'file_location': selected_event.file_location,
             'source_URL': selected_event.source_URL,

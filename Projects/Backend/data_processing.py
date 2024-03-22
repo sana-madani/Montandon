@@ -4,11 +4,6 @@ import json
 import os
 from datetime import datetime
 
-# 定义函数和类用于数据处理
-# ...
-
-# 例如：
-
 def check_disaster_types(events, disaster_type):
     result = []
     if disaster_type == "":
@@ -73,10 +68,12 @@ def produce_countries_data():
         data = json.load(file)
     return data
 
-def read_json_file(file_path):
-    with open(file_path, 'r') as file:
-        data = json.load(file)
-    return data
-
-def read_geojson_file(file_path):
-    return gpd.read_file(file_path, encoding='utf_8_sig')
+def check_impact(imp_type, event):
+    if imp_type == "Deaths":
+        return event['imptypdeat']
+    elif imp_type == "Missing":
+        return event['imptypmiss']
+    elif imp_type == "Injured":
+        return event['imptypinju']
+    else:
+        return "Undefined"

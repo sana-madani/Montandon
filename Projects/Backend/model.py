@@ -6,6 +6,8 @@ class event:
         self.continent = None
         self.start_date = None
         self.finish_date = None
+        self.impact = None
+        self.impact_value = None
         self.type = None
         self.max_value = None
         self.WorldBankIncome = None
