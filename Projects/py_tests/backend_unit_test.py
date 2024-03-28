@@ -56,7 +56,7 @@ def test_send_selected():
     result1 = send_selected(events, data_from_frontend1)
     result2 = send_selected(events, data_from_frontend2)
     assert result1[1]['id'] == '0001'
-    assert len(result2) == 4;
+    assert len(result2) == 4
 
 
 def test_sort_events_by_date():

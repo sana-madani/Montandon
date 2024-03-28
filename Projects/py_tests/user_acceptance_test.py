@@ -165,26 +165,26 @@ def test_country_search(browser):
         if len(td_elements) == 5:
             assert td_elements[2].text == "India"
 
-    def test_country_search(browser):
-        browser.get("http://127.0.0.1:5500/Projects/Frontend/mapping_detail/HTML/interactive_mapping.html")
-        search_box = WebDriverWait(browser, 10).until(
-            EC.presence_of_element_located((By.ID, "All CountriesInput"))
-        )
-        search_box.send_keys("India")
-        time.sleep(1)
-        container_element = WebDriverWait(browser, 10).until(
-            EC.presence_of_element_located((By.ID, "disasterList"))
-        )
-        tbody_element = container_element.find_element(By.TAG_NAME, "table")
-        # get all <tr> element
-        tr_elements = tbody_element.find_elements(By.TAG_NAME, "tr")
-        # calculate the number of <tr> element
-        for tr in tr_elements:
-            # search td element
-            td_elements = tr.find_elements(By.TAG_NAME, "td")
-            # print each td element text
-            if len(td_elements) == 5:
-                assert td_elements[2].text == "India"
+def test_country_search(browser):
+    browser.get("http://127.0.0.1:5500/Projects/Frontend/mapping_detail/HTML/interactive_mapping.html")
+    search_box = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.ID, "All CountriesInput"))
+    )
+    search_box.send_keys("India")
+    time.sleep(1)
+    container_element = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.ID, "disasterList"))
+    )
+    tbody_element = container_element.find_element(By.TAG_NAME, "table")
+    # get all <tr> element
+    tr_elements = tbody_element.find_elements(By.TAG_NAME, "tr")
+    # calculate the number of <tr> element
+    for tr in tr_elements:
+        # search td element
+        td_elements = tr.find_elements(By.TAG_NAME, "td")
+        # print each td element text
+        if len(td_elements) == 5:
+            assert td_elements[2].text == "India"
 
 def test_type_search(browser):
     browser.get("http://127.0.0.1:5500/Projects/Frontend/mapping_detail/HTML/interactive_mapping.html")
@@ -265,3 +265,25 @@ def test_pagination(browser):
         click_pagination.click()
         click_pagination = pagination_container.find_element(By.LINK_TEXT, str(i))
         assert click_pagination.get_attribute("class") == "active"
+
+
+def test_chart1_date_input(browser):
+    browser.get("http://127.0.0.1:5500/Projects/Frontend/summary_mapping/mapping.html")
+    search_chart1 = WebDriverWait(browser, 10).until(
+    EC.presence_of_element_located((By.ID, "chart1Form"))
+    )
+    searchfrom1 = search_chart1.find_element(By.ID, "chart1StartDate")
+    searchto1 = search_chart1.find_element(By.ID, "chart1EndDate")
+    button1 = search_chart1.find_element(By.TAG_NAME, "button")
+    searchfrom1.send_keys("002018-12-04")
+    searchto1.send_keys("002019-12-04")
+    button1.click()
+
+    search_chart2 = WebDriverWait(browser, 10).until(
+    EC.presence_of_element_located((By.ID, "chart2Form"))
+    )
+    searchYear = search_chart2.find_element(By.ID, "chart2Year")
+    button2 = search_chart2.find_element(By.ID, "submitYear")
+    searchYear.send_keys("1922")
+    button2.click()
+    time.sleep(5)

@@ -1,10 +1,12 @@
+# This File
+# is used for processing event data and defining a dictionary disaster_types. 
+# That maps disaster type codes to their full names, 
+# and a list of countries that will 
+# contain all the countries encountered in the event data.
+
 import sys
 from model import event
 from data_processing import produce_countries_data, sort_events_by_date, check_date_after, check_date_before, check_country, check_disaster_types, check_impact
-
-
-
-
 disaster_types = {"EQ": "Earthquake",
                   "FL": "Flood",
                   "VO": "Volcano",
@@ -12,8 +14,10 @@ disaster_types = {"EQ": "Earthquake",
                   "TC": "Tropical cyclone"}
 
 countries = []
-
-#df1 - event_Level : event_ID, ev_name, Country, ev_sdate, ev_fdate
+# df1 - event_Level : event_ID, ev_name, Country, ev_sdate, ev_fdate, impact
+# processes event data and stores it in a dictionary 
+# with event IDs as keys. The other data of this events as value. 
+# The dictionary is like {ID:{name: name1, country: country1,…}}
 def initial_event_Level(data):
     hazards = {}
     for event in data:
@@ -31,7 +35,9 @@ def initial_event_Level(data):
     return hazards
 
 
-#df2 - hazard_Level : event_ID, Class, coordinates, haz_maxvalue, haz_maxunit_code
+# df2 - hazard_Level : event_ID, Class, coordinates, haz_maxvalue, haz_maxunit_code
+# processes hazard data and stores it in a dictionary, 
+# with event IDs as keys, which is similar with initial_event_Level(data).
 def initial_hazard_Level(data):
     data = data['features']
     hazards = {}
@@ -60,7 +66,8 @@ def initial_hazard_Level(data):
             hazards[id] = value
     return hazards
 
-# combine all dic
+# combines the event and hazard data processed by 
+# the previous two functions into a list of event objects.
 def initial_events(df1,df2):
     events = []
     event_level_dic = initial_event_Level(df1)
@@ -85,7 +92,9 @@ def initial_events(df1,df2):
     return events
 
 
-
+# converts a list of event objects into a list of 
+# dictionaries and prepends it with a dictionary of search options. 
+# This list is meant to be sent to the frontend.
 def send_all(events):
     backend_data = []
     search_options = {
@@ -114,7 +123,9 @@ def send_all(events):
         backend_data.append(event_dict)
     return backend_data
 
-
+# filters the list of event objects based on criteria 
+# received from the frontend, 
+# converts the filtered list into a list of dictionaries, and returns it.
 def send_selected(events, data_from_fronted):
     backend_data = []
     backend_data.append({"type": list(set(disaster_types.values()))})

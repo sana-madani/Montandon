@@ -44,9 +44,6 @@ function create_all_Containers() {
   search_Container.appendChild(form);
 
 }
-
-
-// 创建父容器
 function create_key_Container(label, options) {
   const searchContainer = document.createElement('single_search_Container');
   const inputID = label + "Input";

@@ -1,9 +1,13 @@
+# This File
+# is used for processing event data.
 import pandas as pd
 import geopandas as gpd
 import json
 import os
 from datetime import datetime
 
+# filters events based on the disaster type / country. 
+# Serving for type/country search functions in interactive mapping list.
 def check_disaster_types(events, disaster_type):
     result = []
     if disaster_type == "":
@@ -23,7 +27,8 @@ def check_country(events, country):
             if event.country == country:
                 result.append(event)
         return result
-
+    
+# sort events by their start date.
 def sort_events_by_date(events):
     for i in range(0, len(events)):
         for j in range(i, len(events)):
@@ -35,7 +40,9 @@ def sort_events_by_date(events):
                 events[j] = k
     return events
 
-
+# filter events based on whether their start date is 
+# after or before a given date. 
+# Serving for date search in interactive mapping list.
 def check_date_after(events, date1):
     result = []
     if date1 == "":
@@ -61,6 +68,7 @@ def check_date_before(events, date1):
                 result.append(event)
         return result
 
+# reads the JSON file containing all country name and its centroid.
 def produce_countries_data():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     country_file = os.path.join(script_dir,'..','db', 'countries_centroids.json')
@@ -68,6 +76,7 @@ def produce_countries_data():
         data = json.load(file)
     return data
 
+# check and return the corresponding impact
 def check_impact(imp_type, event):
     if imp_type == "Deaths":
         return event['imptypdeat']

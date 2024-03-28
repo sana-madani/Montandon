@@ -102,6 +102,28 @@ nav img {
   border-top: 1.5px solid #f00;
 }
 
+#direction {
+  text-align: left;
+  display: block;
+}
+
+#direction span {
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+#direction a {
+  color: black;
+}
+
+#direction a:hover {
+  color: red;
+}
+
+.centered-h2 {
+  text-align: center;
+}
+
 .text-box h1 {
   font-size: 35px;
 

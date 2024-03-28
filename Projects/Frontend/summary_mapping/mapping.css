@@ -313,3 +313,21 @@ h4.table-title {
 .monochrome-tile-layer {
     filter: grayscale(100%);
 }
+
+
+#direction span {
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+#direction a {
+    color: black;
+}
+
+#direction a:hover {
+    color: red;
+}
+
+.centered-h2 {
+    text-align: center;
+}

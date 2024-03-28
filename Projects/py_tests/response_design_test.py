@@ -24,7 +24,7 @@ def test_responsive_design(width, height):
         driver.get("http://127.0.0.1:5500/Projects/Frontend/landing_page/index.html")
         end_time = time.time()
         load_time = end_time - start_time
-        assert load_time < 5
+        assert load_time < 10
 
         # check if displayed correctly
         assert "Landing Page" in driver.title

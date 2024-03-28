@@ -43,15 +43,6 @@ function loop_coordinates(line_layer, polygon_layer, coord, disaster_type, name)
     if (disaster_type === "Earthquake") {
       var intensity = Number((label.match(/\d+(\.\d+)?/g))[0]); // extract intensity number
       var color = getColorForMagnitude(intensity);
-      // if (intensity >= 7) {
-      //   var color = "red";
-      // }
-      // else if (intensity >= 5) {
-      //   var color = "yellow";
-      // }
-      // else {
-      //   var color = "green";
-      // }
     }
     else if (disaster_type === "Tropical cyclone") {
       var speed = Number((label.match(/\d+(\.\d+)?/g))[0]);
@@ -82,9 +73,9 @@ function initializeMap_line(line_layer, bezierPoints) {
 }
 
 function initializeMap_polygon(polygon_layer, coordinates, color1, l, name) {
-  //var convexHuallVertices = turf.convex(turf.points(coordinates));//convexHuallVertices.geometry.coordinates
   var convexHullPolygon = L.polygon(coordinates, { color: color1 });
-  convexHullPolygon.bindPopup("<b><span style='font-size: 16px;'>" + name + "</span></b><br>" + l).openPopup();
+  convexHullPolygon.bindPopup("<b><span style='font-size: 16px;'>" +
+    name + "</span></b><br>" + l).openPopup();
   convexHullPolygon.addTo(polygon_layer);
 }
 

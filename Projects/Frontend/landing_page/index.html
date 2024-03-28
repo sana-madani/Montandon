@@ -31,17 +31,11 @@
             </div>
         </nav>
 
-        <!--
-        <div class="search-container">
-            <input type="text" id="search" name="search" placeholder="Search">
-            <ul id="suggestions" class="dropdown"></ul>
-        </div>
-
-        <script src="script.js"></script>-->
-
         <div class="text-box">
-            <h1><br>Montandon Platform</h1>
-            <p><br>Montandon aims to make all disaster information universally accessible and useful to IFRC responders
+            <br>
+            <h1>Montandon Platform</h1>
+            <div id="direction"><span><a href="/Projects/Frontend/landing_page/index.html">Home</a></span></div>
+            <p>Montandon aims to make all disaster information universally accessible and useful to IFRC responders
                 for better decision making based on impact information.<br>The objective of Montandon – the Global
                 Crisis Data Bank is to inform future action based on analysis of past natural hazard events, their
                 impacts and responses to these crises. </p>
@@ -66,7 +60,11 @@
         fetch('http://127.0.0.1:5000')
             .then(response => response.json())
             .then(receivedData => {
-                const recentDisasters = receivedData.slice(1, 7); // Get the first six disasters after metadata
+                // Sort the received data by start_date
+                receivedData.sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
+                // Get the first six disasters after metadata
+                const recentDisasters = receivedData.slice(1, 7);
+                // Display the sorted events
                 displayDisasterList(recentDisasters);
             })
             .catch(error => console.error('Error fetching data:', error));
@@ -123,3 +121,6 @@
 </body>
 
 </html>
+
+
+<!-- <div id="direction"><span><a href="/Projects/Frontend/landing_page/index.html">Home</a></span></div> -->

@@ -1,3 +1,6 @@
+# The attributes include 
+# id, name, country, continent, start_date, finish_date, type, 
+# max_value, WorldBankIncome, file_location, source_URL, coordinates.
 class event:
     def __init__(self):
         self.id = None

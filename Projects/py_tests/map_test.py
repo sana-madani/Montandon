@@ -40,31 +40,3 @@ def test_map_initialization_and_marker_placement(browser):
             )
             back.click()
             time.sleep(0.5)
-
-
-
-
-    # 等待地图加载完成
-
-
-    # 验证地图是否成功初始化
-    # assert "Leaflet" in browser.title
-    #
-    # # 获取所有标记元素
-    # markers = browser.find_elements(By.CLASS_NAME, "leaflet-marker-icon")
-    #
-    # # 验证是否有标记被放置在地图上
-    # assert len(markers) > 0
-    #
-    # # 获取第一个标记的位置
-    # first_marker = markers[0]
-    # action = ActionChains(browser)
-    # action.move_to_element(first_marker).perform()
-    #
-    # # 等待标记信息框出现
-    # info_box = WebDriverWait(browser, 10).until(
-    #     EC.visibility_of_element_located((By.CLASS_NAME, "leaflet-popup"))
-    # )
-    #
-    # # 验证标记信息框中是否包含预期的内容
-    # assert "Marker Info" in info_box.text
