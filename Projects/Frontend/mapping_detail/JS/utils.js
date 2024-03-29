@@ -32,14 +32,10 @@ function calculateCentralPoint(coordinates) {
 
 
 function calculateCenter(coordinates) {
-  //console.log(coordinates.length);
-  // 计算经度和纬度的平均值
   var sumLat = 0, sumLng = 0;
   coordinates.forEach(function (coord) {
-    //console.log(coord)
     sumLat += coord[0];
     sumLng += coord[1];
-    //console.log([sumLat, sumLng])
   });
 
   var avgLat = sumLat / coordinates.length;
