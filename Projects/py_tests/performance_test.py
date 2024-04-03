@@ -5,9 +5,9 @@
 
 # User's Guide
 # in terminal:
-# Backend % source venv/bin/activate
+# py_tests % source venv/bin/activate
 # pip3 install locust
-# tests % locust performance_test.py
+# py_tests % locust -f performance_test.py
 
 from locust import HttpUser, task, between
 

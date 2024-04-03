@@ -40,7 +40,9 @@ def test_responsive_design(width, height):
 
         # Check whether a horizontal scroll bar appears on the page
         body = driver.find_element(By.TAG_NAME,"body")
-        assert body.size['width'] <= driver.execute_script("return document.documentElement.clientWidth")
-
+        assert( 
+            body.size['width'] 
+            <= driver.execute_script("return document.documentElement.clientWidth")
+        )
     finally:
         driver.quit()

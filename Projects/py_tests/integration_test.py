@@ -27,7 +27,6 @@ def test_api_response(api_url):
         data2 = json.load(file2)
     events = initial_events(data1, data2)
     backend_data = send_all(events)
-
     # test if api run
     assert response.status_code == 200
     # test if missed data

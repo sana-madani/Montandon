@@ -103,7 +103,6 @@ function generatePoints(coordinates, numberOfPoints) {
   var additionalPoints = generatePointsAlongLine(X, slope, intercept, numberOfPoints);
   var updatedCoordinates = coordinates.concat(additionalPoints);
   return updatedCoordinates;
-
 }
 
 

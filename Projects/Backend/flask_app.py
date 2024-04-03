@@ -33,6 +33,9 @@ def receive_data_from_frontend():
 if __name__ == '__main__':
     global events, df1, df2
     script_dir = os.path.dirname(os.path.abspath(__file__))
+    # if testing less data, change the file path
+    # new_event_Level.json -> event_Level.json
+    # new_hazard_Level.geojson -> hazard_Level.geojson
     json_file_path = os.path.join(script_dir, '..','db', 'new_event_Level.json')
     geojson_file_path = os.path.join(script_dir, '..','db', 'new_hazard_Level.geojson')
     with open(json_file_path, 'r') as file1:

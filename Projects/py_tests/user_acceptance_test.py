@@ -89,7 +89,6 @@ def test_director_in_detail(browser):
     clickable_element = WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.CLASS_NAME, "clickable-name"))
     )
-    click_name = clickable_element.text
     clickable_element.click()
     detail_container = WebDriverWait(browser, 10).until(
         EC.presence_of_element_located((By.ID, "disasterDetail"))

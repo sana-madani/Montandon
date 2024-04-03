@@ -7,6 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 processData().then(([topEventNames, topEventCounts, monthNamesKeys, monthCountsValues, topCountriesMostFrequentDisasters, countries, countryCount]) => {
+    countries = [...new Set(countries)];
     console.log("Countries:", countries)
     fetch('http://127.0.0.1:5000')
         .then(response => response.json())
@@ -16,14 +17,18 @@ processData().then(([topEventNames, topEventCounts, monthNamesKeys, monthCountsV
             console.log("Data", summary_map_data);
             const all_countries = Object.keys(summary_map_data);
             countries.forEach(function (country) {
-                let search_country = all_countries.find(item => item.includes(country));
+                let search_country = all_countries.find(item => item === country);
+                if (search_country === undefined) {
+                    search_country = all_countries.find(item => item.includes(country));
+                }
                 //console.log(country, search_country);
                 if (search_country === undefined) {
                     return;
                 }
                 const coordinates = summary_map_data[search_country];
+                console.log(country, coordinates);
                 const locationMarker = L.circleMarker(coordinates, {
-                    radius: 10,
+                    radius: 5,
                     color: 'red',
                     fillColor: '#f03',
                     fillOpacity: 0.5,

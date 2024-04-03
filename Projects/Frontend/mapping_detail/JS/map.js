@@ -34,6 +34,7 @@ function initializeMap(coord, disaster_type, name) {
   map.fitBounds(bounds);
 }
 
+// loop the different labels with coordinates
 function loop_coordinates(line_layer, polygon_layer, coord, disaster_type, name) {
   coord = sortCoordinates(coord);
   for (const label in coord) {
@@ -67,11 +68,12 @@ function loop_coordinates(line_layer, polygon_layer, coord, disaster_type, name)
 }
 
 
-
+// plot the cyclone line using bezier curve
 function initializeMap_line(line_layer, bezierPoints) {
   L.polyline(bezierPoints, { color: 'yellow' }).addTo(line_layer);
 }
 
+// plot single/multiple polygons
 function initializeMap_polygon(polygon_layer, coordinates, color1, l, name) {
   var convexHullPolygon = L.polygon(coordinates, { color: color1 });
   convexHullPolygon.bindPopup("<b><span style='font-size: 16px;'>" +

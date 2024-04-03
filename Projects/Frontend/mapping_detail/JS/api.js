@@ -285,7 +285,7 @@ function populateInfoTable(item) {
         <td>${item.max_value}</td>
       </tr>
       <tr>
-        <th>${item.impact}</th>
+        <th>Total Deaths</th>
         <td>${item.impact_value}</td>
       </tr>
     </table>

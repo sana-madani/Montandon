@@ -1,3 +1,4 @@
+// create END container for interactive mapping
 function createENDContainer() {
   const END_Container = document.getElementById('END_Container');
   END_Container.className = 'END';
@@ -7,7 +8,7 @@ function createENDContainer() {
   const tbody = document.createElement('tbody');
 
   const headerRow = document.createElement('tr');
-  const headers = ['About GO', 'Find Out More', 'IFRC GO Helpful links', 'Contact Us'];
+  const headers = ['About Montandon', 'Find Out More', 'IFRC GO Helpful links', 'Contact Us'];
 
   headers.forEach(headerText => {
     const th = document.createElement('th');
@@ -22,11 +23,11 @@ function createENDContainer() {
   const aboutGoContent = `
     <td>
       <br />
-      IFRC GO is a Red Cross Red Crescent
+      Montandon is a Red Cross Red Crescent
       <br />
-      platform to connect information on
+      platform to make impact information on
       <br />
-      emergency needs with the right response.
+      emergencies accessible to all.
       <br />
       <br />
     </td>

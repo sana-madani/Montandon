@@ -50,7 +50,7 @@ function create_key_Container(label, options) {
 
   if (label === "All Disaster Types") {
     var prefixString = document.createElement('span');
-    prefixString.textContent = "Disaster Type";
+    prefixString.textContent = "Type";
   } else {
     var prefixString = document.createElement('span');
     prefixString.textContent = "Country";
