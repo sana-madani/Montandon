@@ -36,8 +36,8 @@ if __name__ == '__main__':
     # if testing less data, change the file path
     # new_event_Level.json -> event_Level.json
     # new_hazard_Level.geojson -> hazard_Level.geojson
-    json_file_path = os.path.join(script_dir, '..','db', 'new_event_Level.json')
-    geojson_file_path = os.path.join(script_dir, '..','db', 'new_hazard_Level.geojson')
+    json_file_path = os.path.join(script_dir, '..','db', 'event_Level.json')
+    geojson_file_path = os.path.join(script_dir, '..','db', 'hazard_Level.geojson')
     with open(json_file_path, 'r') as file1:
         data1 = json.load(file1)
     with open(geojson_file_path, 'r') as file2:
