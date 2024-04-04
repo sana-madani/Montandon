@@ -1,12 +1,10 @@
 # IFRC Montandon Website
 
-## Dependencies
+## Dependencies(Open-Source)
 
 ### Backend
 - Flask
 - flask_cors
-- json
-- datetime
 - pycountry
 - geopy.geocoders
 
@@ -21,27 +19,18 @@
 - jest
 - jsdom
 
-
-### Script(package.py)
-- http.server
-- socketserver
-- webbrowser
-- threading
-- subprocess
-- time
-
 ## Installation
 Before running the application, you need to install the necessary dependencies. You can do this by running the following command in your terminal:
+### All Requirements
 
-### Backend
+Most of required packages are in requirements.txt
 ```bash
-pip3 install -r requirements.txt
+pip3 install -r requirements
 ```
 
-### Testing
+### Testing for Javascript
 
 ```bash
-pip3 install pytest selenium locust
 npm install --save-dev jest
 npm install --save-dev @babel/core @babel/preset-env babel-jest
 npm install --save-dev jsdom
