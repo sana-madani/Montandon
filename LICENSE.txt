@@ -1,0 +1,17 @@
+We would like to express our gratitude to the IFRC GO project and its contributors for their open-source initiative. Our project builds upon the foundation laid by the IFRC GO's efforts in making hazard data accessible and interactive. The commitment of the IFRC GO project to open-source solutions and community engagement has significantly influenced the development of our platform. By sharing their resources and knowledge freely, they have not only contributed to the global community's resilience but have also inspired us to develop and share our own contributions. We encourage users and developers to explore the IFRC GO project to better understand the roots of our platform and to support their ongoing work.
+ 
+This project is open source, licensed under the MIT License. We encourage collaboration, modification, and distribution of the source code to foster innovation and education in the field of hazard data visualisation. The license chosen aims to make the project accessible and usable by a wide community of developers, researchers, and educators, promoting the open exchange of ideas and improvements.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
