@@ -26,26 +26,26 @@ Before running the application, you need to install the necessary dependencies. 
 ### Create and activate the virtual environment
 Create
 ```bash
-python3 -m venv venv
+Montandon % python3 -m venv venv
 ```
 Activate
 ```bash
-source venv/bin/activate
+Montandon % source venv/bin/activate
 ```
 
 ### All Requirements
 
 Most of required packages are in requirements.txt
 ```bash
-pip3 install -r requirements
+Montandon % pip3 install -r requirements
 ```
 
 ### Testing for Javascript
 
 ```bash
-npm install --save-dev jest
-npm install --save-dev @babel/core @babel/preset-env babel-jest
-npm install --save-dev jsdom
+Montandon % npm install --save-dev jest
+Montandon % npm install --save-dev @babel/core @babel/preset-env babel-jest
+Montandon % npm install --save-dev jsdom
 ```
 
 
@@ -70,6 +70,6 @@ Montandon % pytest
 run jest
 
 ```bash
-npm test
+Montandon % npm test
 ```
 
