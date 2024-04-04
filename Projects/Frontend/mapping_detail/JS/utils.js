@@ -40,7 +40,6 @@ function calculateCenter(coordinates) {
 
   var avgLat = sumLat / coordinates.length;
   var avgLng = sumLng / coordinates.length;
-  console.log([avgLat, avgLng]);
   return [avgLat, avgLng];
 }
 
@@ -119,13 +118,10 @@ function sortCoordinates(coordinate) {
       digitKeys[parseFloat(digit[0])] = key;
     }
   }
-
   const sortedKeys = Object.keys(digitKeys).sort((a, b) => a - b);
   for (const key of sortedKeys) {
     sortedCoordinates[digitKeys[key]] = coordinate[digitKeys[key]];
   }
-
-  console.log(Object.keys(sortedCoordinates));
   return sortedCoordinates;
 }
 
@@ -134,14 +130,12 @@ function generateGaussianPoints(polygon, numPoints) {
   const center = calculatePolygonCenter(polygon);
   const covarianceMatrix = calculateCovarianceMatrix(polygon, center);
   const points = [];
-
   for (let i = 0; i < numPoints; i++) {
     const newPoint = generateRandomPoint(center, covarianceMatrix);
     if (isPointInsidePolygon(newPoint, polygon)) {
       points.push(newPoint);
     }
   }
-
   return points;
 }
 
@@ -196,7 +190,6 @@ function calculateSegmentBezierPoints(points, t1, t2) {
   if (points.length === 1) {
     return [points[0]];
   }
-
   var interpolatedPoints = [];
   for (var i = 0; i < points.length - 1; i++) {
     var x = (1 - t1) * points[i][0] + t1 * points[i + 1][0];
@@ -218,10 +211,8 @@ function generate_bezierPoints(controlPoints) {
 function getColorForMagnitude(magnitude) {
   var minMagnitude = 0;
   var maxMagnitude = 10;
-
   var red = 255 * (magnitude - minMagnitude) / (maxMagnitude - minMagnitude);
   var green = 0;
   var blue = 0;
-
   return 'rgb(' + Math.round(red) + ', ' + Math.round(green) + ', ' + Math.round(blue) + ')';
 }

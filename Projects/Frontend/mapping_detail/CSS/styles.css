@@ -271,7 +271,6 @@ button {
   font-size: 14px;
 }
 
-/* 悬停时改变按钮颜色 */
 button:hover {
   background-color: #45a049;
 }

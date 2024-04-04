@@ -8,7 +8,6 @@ function getAllInputValues() {
     acc[id] = value;
     return acc;
   }, {});
-  console.log(inputObject);
   return inputObject;
 }
 
@@ -69,7 +68,6 @@ function create_key_Container(label, options) {
   dataList.id = label + 'types';
 
   //option
-  console.log({ "option": options });
   var disasterOptions = options;
   disasterOptions.forEach(function (disaster) {
     var option = document.createElement('option');
@@ -124,7 +122,6 @@ function search() {
   })
     .then(response => response.json())
     .then(result => {
-      console.log(result);
       data = result;
       displayDisasterList(data);
     })

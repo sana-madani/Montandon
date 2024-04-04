@@ -1,3 +1,4 @@
+# This file is used to create fake data for the event and hazard data.
 import json
 import copy
 import os
@@ -12,18 +13,18 @@ new_events = []
 
 # create events data 
 
-# for j in range(0, 54):
-#   for i in range(0, 5):
-#       new_event = copy.deepcopy(events[i])
-#       current_id = new_event['event_ID']
-#       length = len(current_id)
-#       new_event['event_ID'] = current_id[0:length - 1] + str(int(current_id[length - 1]) + j + 6) 
-#       print(new_event)
-#       new_events.append(new_event)
-# all_events = events + new_events
-# print(len(all_events))
-# with open(new_json_file_path, 'w') as f:
-#     json.dump(all_events, f, indent=2)
+for j in range(0, 54):
+  for i in range(0, 5):
+      new_event = copy.deepcopy(events[i])
+      current_id = new_event['event_ID']
+      length = len(current_id)
+      new_event['event_ID'] = current_id[0:length - 1] + str(int(current_id[length - 1]) + j + 6) 
+      print(new_event)
+      new_events.append(new_event)
+all_events = events + new_events
+print(len(all_events))
+with open(new_json_file_path, 'w') as f:
+    json.dump(all_events, f, indent=2)
 
 
 # create hazard data

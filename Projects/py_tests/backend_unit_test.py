@@ -9,7 +9,6 @@ sys.path.append(backend_dir)
 
 from event_processing import initial_event_Level, initial_hazard_Level, initial_events, send_all, send_selected
 from data_processing import check_country, check_disaster_types, check_date_before, check_date_after, sort_events_by_date
-# sys.path.insert(0, '/../Backend')
 
 def test_initial_event_Level():
     # Test initial_event_Level function

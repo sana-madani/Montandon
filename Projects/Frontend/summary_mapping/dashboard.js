@@ -8,25 +8,20 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 processData().then(([topEventNames, topEventCounts, monthNamesKeys, monthCountsValues, topCountriesMostFrequentDisasters, countries, countryCount]) => {
     countries = [...new Set(countries)];
-    console.log("Countries:", countries)
     fetch('http://127.0.0.1:5000')
         .then(response => response.json())
         .then(receivedData => {
-            console.log(receivedData);
             const summary_map_data = receivedData[0].summary_map;
-            console.log("Data", summary_map_data);
             const all_countries = Object.keys(summary_map_data);
             countries.forEach(function (country) {
                 let search_country = all_countries.find(item => item === country);
                 if (search_country === undefined) {
                     search_country = all_countries.find(item => item.includes(country));
                 }
-                //console.log(country, search_country);
                 if (search_country === undefined) {
                     return;
                 }
                 const coordinates = summary_map_data[search_country];
-                console.log(country, coordinates);
                 const locationMarker = L.circleMarker(coordinates, {
                     radius: 5,
                     color: 'red',
@@ -83,7 +78,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     document.getElementById('chart2Form').addEventListener('submit', async function (event) {
         event.preventDefault(); // Prevent the default form submission behavior
         const selectedYear = document.getElementById('chart2Year').value;
-        console.log(selectedYear)
 
         await updateChart2(selectedYear);
     });

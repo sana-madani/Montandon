@@ -12,7 +12,7 @@ function fetchData() {
       createContainers(data);
       create_all_Containers();
       createENDContainer();
-      console.log(data);
+      //console.log(data);
       displayDisasterList(data);
     })
     .catch(error => {
@@ -146,7 +146,6 @@ function displayPagination(totalItems) {
     firstPageLink.textContent = 1;
     firstPageLink.onclick = () => {
       currentPage = 1;
-      console.log(data);
       displayDisasterList(data);
     };
     if (totalPages > 6) {
@@ -173,7 +172,6 @@ function displayPagination(totalItems) {
 
     a.onclick = () => {
       currentPage = i;
-      console.log(data);
       displayDisasterList(data);
     };
 
@@ -196,7 +194,6 @@ function displayPagination(totalItems) {
     lastPageLink.textContent = totalPages;
     lastPageLink.onclick = () => {
       currentPage = totalPages;
-      console.log(data);
       displayDisasterList(data);
     };
     paginationElement.appendChild(lastPage);
