@@ -1,7 +1,6 @@
 import json
 import copy
 import os
-import json
 script_dir = os.path.dirname(os.path.abspath(__file__))
 json_file_path = os.path.join(script_dir, '..','db', 'event_Level.json')
 new_json_file_path = os.path.join(script_dir, '..','db', 'new_event_Level.json')

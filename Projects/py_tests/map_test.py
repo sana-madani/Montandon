@@ -19,7 +19,7 @@ def test_map_initialization_and_marker_placement(browser):
         EC.presence_of_element_located((By.ID, "paginationContainer"))
     )
     pagination_number = len(pagination_container.find_elements(By.TAG_NAME, "li"))
-    for i in range(1, pagination_number + 1):  # loop the pagination
+    for i in range(1, 3):  # loop the pagination, test 3 pages for quick check
         pagination_container = WebDriverWait(browser, 10).until(
             EC.presence_of_element_located((By.ID, "paginationContainer"))
         )

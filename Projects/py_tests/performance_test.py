@@ -5,9 +5,9 @@
 
 # User's Guide
 # in terminal:
-# py_tests % source venv/bin/activate
+# Montandon % source venv/bin/activate
 # pip3 install locust
-# py_tests % locust -f performance_test.py
+# Montandon % locust -f performance_test.py
 
 from locust import HttpUser, task, between
 

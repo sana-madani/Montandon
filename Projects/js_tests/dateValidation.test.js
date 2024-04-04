@@ -1,5 +1,5 @@
 // Import the functions to be tested
-const { updateEndDateMin, validateDate } = require('./dateValidation.js');
+const { updateEndDateMin, validateDate } = require('../Frontend/summary_mapping/dateValidation.js');
 
 // Mock the DOM environment using jsdom
 const { JSDOM } = require('jsdom');

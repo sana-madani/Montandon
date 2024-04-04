@@ -19,8 +19,8 @@ def test_api_response(api_url):
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(script_dir)
-    json_file_path = os.path.join(parent_dir, 'db', 'event_Level.json')
-    geojson_file_path = os.path.join(parent_dir, 'db', 'hazard_Level.geojson')
+    json_file_path = os.path.join(parent_dir, 'db', 'new_event_Level.json')
+    geojson_file_path = os.path.join(parent_dir, 'db', 'new_hazard_Level.geojson')
     with open(json_file_path, 'r') as file1:
         data1 = json.load(file1)
     with open(geojson_file_path, 'r') as file2:

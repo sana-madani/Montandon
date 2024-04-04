@@ -1,7 +1,5 @@
 # This File
 # is used for processing event data.
-import pandas as pd
-import geopandas as gpd
 import json
 import os
 from datetime import datetime

@@ -3,8 +3,6 @@
 # That maps disaster type codes to their full names, 
 # and a list of countries that will 
 # contain all the countries encountered in the event data.
-
-import sys
 from model import event
 from data_processing import produce_countries_data, sort_events_by_date, check_date_after, check_date_before, check_country, check_disaster_types, check_impact
 disaster_types = {"EQ": "Earthquake",
